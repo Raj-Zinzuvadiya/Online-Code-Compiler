@@ -26,7 +26,7 @@ public class CodeExecutionController {
     }
 
     @GetMapping("/submit")
-    public ResponseEntity<String> submit(@RequestParam String languageName,@RequestParam String code)
+    public ResponseEntity<String> submit(@RequestParam String languageName,@RequestParam String code) throws Exception
     {
         codeExecutionService.executeCode(languageName, code);
         return new ResponseEntity<>("Code Execution Service Invoked", HttpStatus.OK);
